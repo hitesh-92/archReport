@@ -8,6 +8,10 @@
     
 
     <style>
+body{
+    background: rgb(255, 245, 245)
+}
+
 
 .wrapper{
     display: grid;
@@ -63,6 +67,7 @@
 
 p{
     font-size: 0.85em;
+    font-family: sans-serif
 }
 
 .box2 > div:nth-child(odd){
@@ -104,7 +109,11 @@ a:hover{
 }
 
 p{
-    font-size: 0.85em;
+    font-size: 0.8em;
+}
+
+h4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 
@@ -121,7 +130,7 @@ p{
     
     <div class="wrapper">
         
-        <div class="box box1"> <p>arch report</p>  </div>
+        <div class="box box1"> <h4>arch report</h4>  </div>
         
         <div class="box box2">  {{> box2}} </div><!--box2-->
         <div class="box box3">  {{> box3}} </div><!--box3-->
