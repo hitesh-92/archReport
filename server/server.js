@@ -2,7 +2,9 @@ require('./config/config');
 
 const express = require('express');
 const hbs = require('hbs');
+const {ObjectID} = require('mongodb');
 const bodyParser = require('body-parser');
+const _ = require('lodash');
 
 var {mongoose} = require('./db/mongoose');
 var {log_site} = require('./models/log_site');
@@ -30,11 +32,15 @@ app.get('/archive', (req, res) => {
     res.render('archive.hbs');
 });
 
+
+//log_site setup
+
+//add site
 app.post('/log', (req, res) => {
     var log = new log_site({
         title: req.body.title,
         url: req.body.url,
-        entryDate: req.body.entryDate
+        entryDate: new Date().getTime()
     });
 
     log.save().then((doc) => {
@@ -44,6 +50,84 @@ app.post('/log', (req, res) => {
     });
 });
 
+//retrieve all sites
+app.get('/log', (req, res) => {
+    log_site.find().then((logs) => {
+        res.send({logs});
+    }, (e) => {
+        res.send(400).send(e);
+    });
+});
+
+//retrieve site by ID
+app.get('/log/:id', (req, res) => {
+    var id = req.params.id;
+
+    if(!ObjectID.isValid(id)){
+        return res.status(404).send();
+    }
+
+    log_site.findById(id).then((log) => {
+        if(!log){
+            return res.status(404).send();
+        }
+
+        res.send({log});
+    }).catch((e) => {
+        return res.status(400).send();
+    })
+});
+
+//delete site by ID
+app.delete('/log/:id', (req, res) => {
+    var id = req.params.id;
+
+    if(!ObjectID.isValid(id)){
+        return res.status(404).send();
+    }
+
+    log_site.findByIdAndRemove(id).then((log) => {
+        if(!log){
+            return res.status(404).send();
+        }
+
+        res.send({log});
+    }).catch((e) => {
+        res.status(400).send();
+    });
+});
+
+//update
+app.patch('/log/:id', (req, res) => {
+    var id = req.params.id;
+    var body = _.pick(req.body, ['title', 'url', 'entryDate']);
+
+    if(!ObjectID.isValid(id)){
+        return res.status(404).send();
+    }
+
+    body.updatedAt = new Date().getTime();
+
+    log_site.findByIdAndUpdate(
+        id,
+        {$set: body},
+        {new: true}
+    ).then((log) => {
+        if(!log){
+            return res.status(404).send();
+        }
+        res.send({log});
+    }).catch((e) => {
+        res.status(400).send();
+    });
+});
+
+
+
+
+
+//add log_site to: get/get_all/update/delete/
+//add user to: add/get/get_all/update/delete/
 
 app.listen(port, () => {
     console.log(`Running Express Server - port:${port}`);
