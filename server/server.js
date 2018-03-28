@@ -1,16 +1,24 @@
+require('./config/config');
+
 const express = require('express');
 const hbs = require('hbs');
 
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 hbs.registerPartials(__dirname + '/../views/partials');
+
+
 app.set('view engine', 'hbs');
 
-app.use(express.static(__dirname + '../public'));
+// app.use(express.static(__dirname + '../public'));
+var path = require ('path');
+app.use(express.static(path.join(__dirname + '.../public')));
 
-app.get('/', (req, res) => {
+
+
+app.get('/', function(req, res) {
     res.render('index.hbs');
 });
 
