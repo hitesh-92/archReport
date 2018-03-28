@@ -12,17 +12,21 @@ var {User} = require('./models/user');
 
 var app = express();
 const port = process.env.PORT;
+
 app.use(bodyParser.json());
 
 
 //hbs setup
 hbs.registerPartials(__dirname + '/../views/partials');
+// hbs.registerHelper(__dirname, + './../views/assets');
 app.set('view engine', 'hbs');
 //alt method to link
 // app.use(express.static(__dirname + '../public'));
 var path = require ('path');
 app.use(express.static(path.join(__dirname + '.../public')));
 
+
+//pages to render
 
 app.get('/', function(req, res) {
     res.render('index.hbs');
@@ -33,7 +37,11 @@ app.get('/archive', (req, res) => {
 });
 
 
-//log_site setup
+
+
+
+
+//-----log_site setup
 
 //add site
 app.post('/log', (req, res) => {
@@ -126,9 +134,24 @@ app.patch('/log/:id', (req, res) => {
 
 
 
-//add log_site to: get/get_all/update/delete/
-//add user to: add/get/get_all/update/delete/
+//-----add user to: add/get/get_all/update/delete/
+
+//add user
+app.post('/users', (req,res) => {
+    var body = _.pick(req.body, ['email', 'password']);
+    var user = new User(body);
+
+    user.save().then(() => {
+        return user.generateAuthToken();
+    }).then((token) => {
+        res.header('x-auth', token).send(user);
+    }).catch((e) => {
+        res.status(400).send(e);
+    });
+});
 
 app.listen(port, () => {
     console.log(`Running Express Server - port:${port}`);
 });
+
+module.exports = {app};
