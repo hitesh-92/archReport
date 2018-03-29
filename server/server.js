@@ -9,6 +9,7 @@ const _ = require('lodash');
 var {mongoose} = require('./db/mongoose');
 var {log_site} = require('./models/log_site');
 var {User} = require('./models/user');
+var {authenticate} = require('./middleware/authenticate');
 
 var app = express();
 const port = process.env.PORT;
@@ -150,6 +151,11 @@ app.post('/users', (req, res) => {
     });
 });
 
+//authenticate user
+app.get('/users/me', authenticate, (req, res) => {
+    res.send(req.send);
+});
+
 //GET - user login
 app.post('/users/login', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -163,10 +169,17 @@ app.post('/users/login', (req, res) => {
     });
 });
 
+//DELETE - user
+app.get('/users/me/token', authenticate, (req, res) => {
+    req.user.removeToken(req.token).then(() => {
+        res.status(200).send(); 
+    }, () => { 
+        res.status(400).send();
+    });
+});
+
 // GET - all
 // GET/:ID
-// DELETE
-// PATCH
 
 app.listen(port, () => {
     console.log(`Running Express Server - port:${port}`);
