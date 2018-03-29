@@ -134,8 +134,8 @@ app.patch('/log/:id', (req, res) => {
 
 
 
-//-----add user routes to: get:id/get_all/update/delete/
 
+//-----add user routes to: get:id/get_all/update/delete/
 // POST/users - add user
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -147,6 +147,19 @@ app.post('/users', (req, res) => {
         res.header('x-auth', token).send(user);
     }).catch((e) => {
         res.status(400).send(e);
+    });
+});
+
+//GET - user login
+app.get('/users/login', (req, res) => {
+    var body = _.pick(req.body, ['email', 'password']);
+
+    User.findByCredentials(body.email, body.password).then((user) => {
+        return user.generateAuthToken().then((token) => {
+            res.header('x-auth', token).send(user);
+        });
+    }).catch((e) => {
+        res.status(400).send();
     });
 });
 
