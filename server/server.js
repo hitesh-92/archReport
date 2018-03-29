@@ -151,7 +151,7 @@ app.post('/users', (req, res) => {
 });
 
 //GET - user login
-app.get('/users/login', (req, res) => {
+app.post('/users/login', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
 
     User.findByCredentials(body.email, body.password).then((user) => {
