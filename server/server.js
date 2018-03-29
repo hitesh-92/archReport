@@ -21,9 +21,9 @@ hbs.registerPartials(__dirname + '/../views/partials');
 // hbs.registerHelper(__dirname, + './../views/assets');
 app.set('view engine', 'hbs');
 //alt method to link
-// app.use(express.static(__dirname + '../public'));
-var path = require ('path');
-app.use(express.static(path.join(__dirname + '.../public')));
+app.use(express.static(__dirname + '../public'));
+// var path = require ('path');
+// app.use(express.static(path.join(__dirname + '.../public')));
 
 
 //pages to render
@@ -43,7 +43,7 @@ app.get('/archive', (req, res) => {
 
 //-----log_site setup
 
-//add site
+// POST/log - add log
 app.post('/log', (req, res) => {
     var log = new log_site({
         title: req.body.title,
@@ -58,7 +58,7 @@ app.post('/log', (req, res) => {
     });
 });
 
-//retrieve all sites
+// GET - all logs
 app.get('/log', (req, res) => {
     log_site.find().then((logs) => {
         res.send({logs});
@@ -67,7 +67,7 @@ app.get('/log', (req, res) => {
     });
 });
 
-//retrieve site by ID
+// GET/:logID 
 app.get('/log/:id', (req, res) => {
     var id = req.params.id;
 
@@ -86,7 +86,7 @@ app.get('/log/:id', (req, res) => {
     })
 });
 
-//delete site by ID
+// DELETE/:logID
 app.delete('/log/:id', (req, res) => {
     var id = req.params.id;
 
@@ -105,7 +105,7 @@ app.delete('/log/:id', (req, res) => {
     });
 });
 
-//update
+// PATCH/:logID
 app.patch('/log/:id', (req, res) => {
     var id = req.params.id;
     var body = _.pick(req.body, ['title', 'url', 'entryDate']);
@@ -134,10 +134,10 @@ app.patch('/log/:id', (req, res) => {
 
 
 
-//-----add user to: add/get/get_all/update/delete/
+//-----add user routes to: get:id/get_all/update/delete/
 
-//add user
-app.post('/users', (req,res) => {
+// POST/users - add user
+app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
 
@@ -149,6 +149,11 @@ app.post('/users', (req,res) => {
         res.status(400).send(e);
     });
 });
+
+// GET - all
+// GET/:ID
+// DELETE
+// PATCH
 
 app.listen(port, () => {
     console.log(`Running Express Server - port:${port}`);
