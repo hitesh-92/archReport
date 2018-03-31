@@ -42,14 +42,14 @@ app.get('/archive', (req, res) => {
 
 
 
-//-----log_site setup
+//-----log_site routes
 
 // POST/log - add log
 app.post('/log', (req, res) => {
     var log = new log_site({
         title: req.body.title,
         url: req.body.url,
-        entryDate: new Date().getTime()
+        entryDate: Date()
     });
 
     log.save().then((doc) => {
@@ -136,7 +136,8 @@ app.patch('/log/:id', (req, res) => {
 
 
 
-//-----add user routes to: get:id/get_all/update/delete/
+//-----user routes
+
 // POST/users - add user
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);

@@ -14,11 +14,11 @@ var log_site = mongoose.model('Site', {
         trim: true
     },
     entryDate: {
-        type: Number,
+        type: String,
         required: true
     },
     updatedAt: {
-        type: Number,
+        type: String,
         default: null
     }
 });
