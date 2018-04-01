@@ -62,7 +62,7 @@ UserSchema.methods.generateAuthToken = function(){
   var token = jwt.sign({ 
     _id: user._id.toHexString(), 
     access
-  }, 'abc123').toString();
+  }, process.env.JWT_SECRET).toString();
   user.tokens = user.tokens.concat({access, token});
 
   return user.save().then(() => {
@@ -73,7 +73,7 @@ UserSchema.methods.generateAuthToken = function(){
 UserSchema.methods.removeToken = function(token){
   var user = this;
 
-  return user.update({
+   return user.update({
     $pull: { tokens: {token} }
   });
 };
@@ -94,9 +94,6 @@ UserSchema.statics.findByCredentials = function(email, password){
     });//new Promise
   });//return
 };
-
-
-
 
 var User = mongoose.model('User', UserSchema);
 

@@ -1,3 +1,5 @@
+/*
+
 const jwt = require('jsonwebtoken');
 const {ObjectID} = require('mongodb');
 
@@ -7,16 +9,14 @@ const {User} = require('./../../models/user');
 const userOneId = new ObjectID();
 const userTwoId = new ObjectID();
 
+//create users to add
 const users = [{
     _id: userOneId,
     email: 'hitesh@email.com',
     password: 'password1',
     token:[{
         access: 'auth',
-        token: jwt.sign({
-            _id: userOneId,
-            access: 'auth'
-        }, 'salt').toString()
+        token: jwt.sign({_id: userOneId, access: 'auth'}, process.env.JWT_SECRET).toString()
     }]
 },{
     _id: userTwoId,
@@ -24,45 +24,74 @@ const users = [{
     password: 'password2',
     token:[{
         access: 'auth',
-        token: jwt.sign({
-            _id: userTwoId,
-            access: 'auth'
-        }, 'salt').toString()
+        token: jwt.sign({_id: userTwoId, access: 'auth'}, process.env.JWT_SECRET).toString()
     }]
 }];
 
-const log_sites = [{
-    _id: new Object(),
+//create websites to add
+const logs = [{
+    _id: new ObjectID(),
     title: 'realNews',
     url: 'www.archreport.uk',
     entryDate: new Date(),
-    updatedAt: null
+
 }, {
-    _id: new Object(),
+    _id: new ObjectID(),
     title: 'fakeNews',
     url: 'www.cnn.com',
     entryDate: new Date(),
     updatedAt: '31032018'
 }];
 
-const populatelog_site = (done) => {
+//populate 'sites' collection
+// const populateLogs = (done) => {
+//     log_site.remove({}).then(() => {
+//         return log_site.insertMany(logs);
+//     }).then(() => done());
+// };
+
+//populate 'users' colleciton
+// const populateUsers = (done) => {
+//     User.remove({}).then(() => {
+//         var userOne = new User(users[0]).save();
+//         var userTwo = new User(users[1]).save();
+
+//         return Promise.all([userOne, userTwo])
+//     }).then(() => done());
+// };
+
+
+
+const populateLogs = (done) => {
     log_site.remove({}).then(() => {
-        return log_site.insertMany(log_sites);
+      return log_site.insertMany(logs);
     }).then(() => done());
 };
+
 
 const populateUsers = (done) => {
     User.remove({}).then(() => {
-        var userOne = new User(users[0].save);
-        var userTwo = new User(users[1].save);
+        var userOne = new User(users[0]).save();
+        var userTwo = new User(users[1]).save();
 
-        return Promise.all([userOne, userTwo])
+        return Promise.all([userOne,userTwo])
     }).then(() => done());
 };
 
+
+
+
+
+
+
+
+
 module.exports = {
-    log_sites,
-    populatelog_site,
+    logs,
+    populateLogs,
     users,
     populateUsers
 };
+
+
+*/

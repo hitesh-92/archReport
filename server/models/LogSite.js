@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var log_site = mongoose.model('Site', {
+var LogSite = mongoose.model('Site', {
     title: {
         type: String,
         required: true,
@@ -21,6 +21,10 @@ var log_site = mongoose.model('Site', {
         type: String,
         default: null
     }
+    // _creator: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     required: true
+    // }
 });
 
-module.exports = {log_site};
+module.exports = {LogSite};

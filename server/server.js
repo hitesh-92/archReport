@@ -2,14 +2,14 @@ require('./config/config');
 
 const express = require('express');
 const hbs = require('hbs');
-const {ObjectID} = require('mongodb');
+// const {ObjectID} = require('mongodb');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 
 var {mongoose} = require('./db/mongoose');
-var {log_site} = require('./models/log_site');
-var {User} = require('./models/user');
-var {authenticate} = require('./middleware/authenticate');
+var {LogSite} = require('./models/LogSite');
+// var {User} = require('./models/user');
+// var {authenticate} = require('./middleware/authenticate');
 
 var app = express();
 const port = process.env.PORT;
@@ -46,28 +46,31 @@ app.get('/archive', (req, res) => {
 
 // POST/log - add log
 app.post('/log', (req, res) => {
-    var log = new log_site({
+    var log = new LogSite({
         title: req.body.title,
         url: req.body.url,
-        entryDate: Date()
+        entryDate: new Date().getTime(),
+        // _creator: req.user._id
     });
 
     log.save().then((doc) => {
         res.send(doc);
     }, (e) => {
-        res.send(400).send(e);
+        res.sendStatus(400).send(e);
     });
 });
 
+
 // GET - all logs
 app.get('/log', (req, res) => {
-    log_site.find().then((logs) => {
+    LogSite.find().then((logs) => {
         res.send({logs});
     }, (e) => {
         res.send(400).send(e);
     });
 });
 
+/*
 // GET/:logID 
 app.get('/log/:id', (req, res) => {
     var id = req.params.id;
@@ -137,7 +140,7 @@ app.patch('/log/:id', (req, res) => {
 
 
 //-----user routes
-
+/* 
 // POST/users - add user
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -181,9 +184,13 @@ app.get('/users/me/token', authenticate, (req, res) => {
 
 // GET - all
 // GET/:ID
+*/
+
+
+
 
 app.listen(port, () => {
-    console.log(`Running Express Server - port:${port}`);
+    console.log(`\nRunning Express Server - port:${port}\n`);
 });
 
 module.exports = {app};

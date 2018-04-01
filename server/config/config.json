@@ -1,0 +1,13 @@
+{
+    "development": {
+      "PORT": 5000,
+      "MONGODB_URI": "mongodb://localhost:27017/archReport",
+      "JWT_SECRET": "deveopmentSALT"
+    },
+    "test": {
+      "PORT": 5000,
+      "MONGODB_URI": "mongodb://localhost:27017/archReportTest",
+      "JWT_SECRET": "testSALT"
+    }
+  }
+  
