@@ -2,11 +2,17 @@
 const request = require('supertest');
 const expect = require('expect');
 const {ObjectID} = require('mongodb');
+const jwt = require('jsonwebtoken')
 
 const {app} =  require('./../server');
 const {LogSite} = require('./../models/LogSite');
-// const {User} = require('./../models/user');
-// const {logs, populateLogs, users, populateUsers} = require('./seed/seed');
+const {User} = require('./../models/User');
+const {_users, _logs, _populateUsers, _populateLogs} = require('./seed/seed');
+
+// beforeEach(_populateLogs);
+// beforeEach(_populateUsers);
+
+
 
 const testLogs = [{
     _id: new ObjectID(),
@@ -22,13 +28,42 @@ const testLogs = [{
     updatedAt: '1522549489831'
 }];
 
+const userOneId = new ObjectID();
+const userTwoId = new ObjectID();
+
+const testUsers = [{
+    _id: userOneId,
+    email: 'hitesh@example.com',
+    password: 'userOnePass',
+    tokens: [{
+        access: 'auth',
+        token: jwt.sign({_id: userOneId, access: 'auth'}, process.env.JWT_SECRET).toString()
+    }]
+}, {
+    _id: userTwoId,
+    email: 'userTwo@example.com',
+    password: 'userTwoPass',
+    tokens: [{
+        access: 'auth',
+        token: jwt.sign({_id: userTwoId, access: 'auth'}, process.env.JWT_SECRET).toString()
+    }]
+}];
+
+
 beforeEach((done) => {
     LogSite.remove({}).then(() => {
         LogSite.insertMany(testLogs);
     }).then(() => done());
 });
+// beforeEach((done) => {
+//     User.remove({}).then(() => {
+//         User.insertMany(testUsers);
+//     }).then(() => done());
+// });
 
-// /log ROUTES
+
+
+// LogSite ROUTES
 
 describe('POST /log', () => {
 
@@ -54,7 +89,7 @@ describe('POST /log', () => {
                 done();
             }).catch((e) => done(e));
         });
-    });//create new log
+    }).timeout(4000);//create new log
 
 
     it('should not add log with invalid title/url', (done) => {
@@ -66,7 +101,7 @@ describe('POST /log', () => {
         .end((err, res) => {
             if(err){ return done(err) }
             LogSite.find().then((log) => {
-                expect(log.length).toBe(2);
+                expect(log.length).toBe(2);                
                 done();
             }).catch((e) => done(e));
         });
@@ -191,9 +226,34 @@ describe('PATCH /log/:id', () => {
 
 
 
-// USER ROUTES
+// User ROUTES
 
-// describe('')
+describe('GET /users/me', () => {
+
+    it('should create new user', (done) => {
+        var email = 'test@email.com';
+        var password = 'password!';
+
+        request(app)
+        .post('/users')
+        .send({email, password})
+        .expect(200)
+        .expect((res) => {
+            expect(res.headers['x-auth']).toBeTruthy();
+            expect(res.body.email).toBe(email);
+            expect(res.body._id).toBeTruthy();
+        })
+        .end((err) => {
+            if(err){ return done(err); }
+            User.findOne({email}).then((user) => {
+                expect(user).toBeTruthy();
+                expect(user.password).not.toBe(password);
+                done();                
+            }).catch((e) => done(e));
+        });
+    });
+
+});//GET /users/me
 
 
 

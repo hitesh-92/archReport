@@ -8,7 +8,7 @@ const _ = require('lodash');
 
 var {mongoose} = require('./db/mongoose');
 var {LogSite} = require('./models/LogSite');
-// var {User} = require('./models/user');
+var {User} = require('./models/User');
 // var {authenticate} = require('./middleware/authenticate');
 
 var app = express();
@@ -154,7 +154,7 @@ app.post('/users', (req, res) => {
         res.status(400).send(e);
     });
 });
-
+/*
 //authenticate user
 app.get('/users/me', authenticate, (req, res) => {
     res.send(req.send);
@@ -185,7 +185,7 @@ app.get('/users/me/token', authenticate, (req, res) => {
 // GET - all
 // GET/:ID
 
-
+*/
 
 
 
