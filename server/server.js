@@ -2,7 +2,7 @@ require('./config/config');
 
 const express = require('express');
 const hbs = require('hbs');
-// const {ObjectID} = require('mongodb');
+const {ObjectID} = require('mongodb');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 
@@ -46,17 +46,17 @@ app.get('/archive', (req, res) => {
 
 // POST/log - add log
 app.post('/log', (req, res) => {
-    var log = new LogSite({
+    var newLog = new LogSite({
         title: req.body.title,
         url: req.body.url,
         entryDate: new Date().getTime(),
         // _creator: req.user._id
     });
 
-    log.save().then((doc) => {
+    newLog.save().then((doc) => {
         res.send(doc);
     }, (e) => {
-        res.sendStatus(400).send(e);
+        res.status(400).send(e);
     });
 });
 
@@ -70,7 +70,7 @@ app.get('/log', (req, res) => {
     });
 });
 
-/*
+
 // GET/:logID 
 app.get('/log/:id', (req, res) => {
     var id = req.params.id;
@@ -79,7 +79,7 @@ app.get('/log/:id', (req, res) => {
         return res.status(404).send();
     }
 
-    log_site.findById(id).then((log) => {
+    LogSite.findById(id).then((log) => {
         if(!log){
             return res.status(404).send();
         }
@@ -98,7 +98,7 @@ app.delete('/log/:id', (req, res) => {
         return res.status(404).send();
     }
 
-    log_site.findByIdAndRemove(id).then((log) => {
+    LogSite.findByIdAndRemove(id).then((log) => {
         if(!log){
             return res.status(404).send();
         }
@@ -120,7 +120,7 @@ app.patch('/log/:id', (req, res) => {
 
     body.updatedAt = new Date().getTime();
 
-    log_site.findByIdAndUpdate(
+    LogSite.findByIdAndUpdate(
         id,
         {$set: body},
         {new: true}
