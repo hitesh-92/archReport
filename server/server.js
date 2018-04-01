@@ -140,7 +140,7 @@ app.patch('/log/:id', (req, res) => {
 
 
 //-----user routes
-/* 
+
 // POST/users - add user
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -184,7 +184,7 @@ app.get('/users/me/token', authenticate, (req, res) => {
 
 // GET - all
 // GET/:ID
-*/
+
 
 
 

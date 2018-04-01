@@ -28,7 +28,7 @@ beforeEach((done) => {
     }).then(() => done());
 });
 
-
+// /log ROUTES
 
 describe('POST /log', () => {
 
@@ -189,6 +189,11 @@ describe('PATCH /log/:id', () => {
 
 });//PATCH /log/:id
 
+
+
+// USER ROUTES
+
+// describe('')
 
 
 
