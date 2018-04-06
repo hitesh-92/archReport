@@ -27,6 +27,7 @@
     "validator": "^9.4.1"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "expect": "^22.4.3",
     "mocha": "^3.0.2",
     "nodemon": "^1.17.2",

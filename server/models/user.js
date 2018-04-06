@@ -20,6 +20,7 @@ var UserSchema = new Schema({
   password:{
     type: String,
     required: true,
+    minlength: 6
   },
   tokens: [{
     access: {
@@ -41,7 +42,6 @@ UserSchema.methods.toJSON = function(){
   return _.pick(userObject, ['_id', 'email']);
 };
 
-
 UserSchema.pre('save', function(next){
   var user = this;
 
@@ -56,8 +56,6 @@ UserSchema.pre('save', function(next){
     next();
   }
 });
-
-
 
 UserSchema.methods.generateAuthToken = function(){
   var user = this;
@@ -74,8 +72,20 @@ UserSchema.methods.generateAuthToken = function(){
   });
 };
 
+UserSchema.statics.findByCredentials = function(email , password){
+  var User = this;
 
+  return User.findOne({email}).then((user) => {
+    if(!user){ return Promise.reject(); }
 
+    return new Promise((resolve, reject) => {
+      bcrypt.compare(password, user.password, (err, res) => {
+        if(res){ resolve(user) }
+        else { reject() }
+      });//bcypt
+    });//return
+  });
+};
 
 
 

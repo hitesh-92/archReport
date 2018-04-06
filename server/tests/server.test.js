@@ -2,12 +2,14 @@
 const request = require('supertest');
 const expect = require('expect');
 const {ObjectID} = require('mongodb');
-const jwt = require('jsonwebtoken')
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const assert = require('assert');
 
 const {app} =  require('./../server');
 const {LogSite} = require('./../models/LogSite');
 const {User} = require('./../models/User');
-const {_users, _logs, _populateUsers, _populateLogs} = require('./seed/seed');
+// const {_users, _logs, _populateUsers, _populateLogs} = require('./seed/seed');
 
 // beforeEach(_populateLogs);
 // beforeEach(_populateUsers);
@@ -55,11 +57,24 @@ beforeEach((done) => {
         LogSite.insertMany(testLogs);
     }).then(() => done());
 });
+
+// beforeEach((done) => {
+//     mongoose.connection.collections.sites.drop(() => {
+//         User.insertMany(testLogs);
+//         done();
+//     });
+// });
+
+
 // beforeEach((done) => {
 //     User.remove({}).then(() => {
 //         User.insertMany(testUsers);
 //     }).then(() => done());
 // });
+
+
+
+console.log("done!");
 
 
 
@@ -85,7 +100,7 @@ describe('POST /log', () => {
                 expect(log.length).toBe(1);
                 expect(log[0].url).toBe(url);
                 expect(log[0].title).toBe(title);
-                // expect(log[0].entryDate).toBe(typeof String);
+                expect(typeof log[0].entryDate).toBe('string');
                 done();
             }).catch((e) => done(e));
         });
@@ -203,7 +218,8 @@ describe('DELETE /log/:id', () => {
 
 
 
-describe('PATCH /log/:id', () => {
+describe('PATCH /log/:id', function(){
+    this.timeout(5000);
 
     it('should update log and add updatedAt', (done) => {
         var _id = testLogs[0]._id.toHexString();
@@ -227,7 +243,7 @@ describe('PATCH /log/:id', () => {
 
 
 // User ROUTES
-
+/*
 describe('GET /users/me', () => {
 
     it('should create new user', (done) => {
@@ -251,6 +267,30 @@ describe('GET /users/me', () => {
                 done();                
             }).catch((e) => done(e));
         });
+    });
+
+    it('should return validation error if "email" in request invalid', (done) => {
+        // var _email = 'good@email.com';
+        var password = 'password!';
+        var email =  'bademail';
+        // var _password = 'abc';
+                
+        request(app)
+        .post('/users')
+        .send({email, password})
+        .expect(400)
+        .end(done);
+    });
+
+    it('should return validation error if "password" in request invalid', (done) => {
+        var email = 'good@email.com';     
+        var password = 'abc';
+                
+        request(app)
+        .post('/users')
+        .send({email, password})
+        .expect(400)
+        .end(done);
     });
 
 });//GET /users/me
