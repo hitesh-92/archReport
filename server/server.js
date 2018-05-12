@@ -5,14 +5,25 @@ const hbs = require('hbs');
 const {ObjectID} = require('mongodb');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
+const morgan = require('morgan')
+
+var app = express();
+app.use(morgan('dev'));
+
 
 var {mongoose} = require('./db/mongoose');
 var {LogSite} = require('./models/LogSite');
-var {User} = require('./models/User');
+// var {User} = require('./models/User');
 // var {authenticate} = require('./middleware/authenticate');
 
-var app = express();
 const port = process.env.PORT;
+
+
+const userRoutes = require('../api/routes/user');
+app.use('/user', userRoutes)
+
+
+
 
 app.use(bodyParser.json());
 
@@ -137,10 +148,9 @@ app.patch('/log/:id', (req, res) => {
 
 
 
-
-
+//####user routes start!
+/*
 //-----user routes
-
 // POST/users - add user
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -154,12 +164,12 @@ app.post('/users', (req, res) => {
         res.status(400).send(e);
     });
 });
-/*
+
 //authenticate user
 app.get('/users/me', authenticate, (req, res) => {
     res.send(req.send);
 });
-*/
+
 //GET - user login
 app.post('/users/login', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
@@ -184,8 +194,8 @@ app.get('/users/me/token', authenticate, (req, res) => {
 
 // GET - all
 // GET/:ID
-
 */
+//####user routes end
 
 
 

@@ -8,7 +8,7 @@ const assert = require('assert');
 
 const {app} =  require('./../server');
 const {LogSite} = require('./../models/LogSite');
-const {User} = require('./../models/User');
+// const {User} = require('./../models/User');
 // const {_users, _logs, _populateUsers, _populateLogs} = require('./seed/seed');
 
 // beforeEach(_populateLogs);

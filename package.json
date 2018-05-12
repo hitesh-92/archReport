@@ -16,6 +16,7 @@
   "author": "Hitesh",
   "license": "ISC",
   "dependencies": {
+    "bcrpyt": "^2.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
@@ -24,6 +25,7 @@
     "lodash": "^4.17.5",
     "mongodb": "^3.0.5",
     "mongoose": "^5.0.12",
+    "morgan": "^1.9.0",
     "validator": "^9.4.1"
   },
   "devDependencies": {
