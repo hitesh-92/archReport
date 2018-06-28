@@ -8,5 +8,3 @@ if(env === 'development' || env === 'test'){
     process.env[key] = envConfig[key];
   });
 }
-var date =  new Date().getTime();
-console.log(`***** env:  ${env}  \n*****${date}`);
