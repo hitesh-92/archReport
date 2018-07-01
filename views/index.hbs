@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{jQuery}}
+    
     <title>arch</title>
     
+    <link rel="stylesheet" href="style.css">
 
     <style>
 
@@ -92,7 +93,7 @@ p{
     font-size: 0.8em;
 }
 h4{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 div{
     margin-top: 0.5em;
@@ -108,7 +109,9 @@ a{
 </head>
 <body>
 
-    {{!-- {{> alert}} --}}
+    {{> alert}}
+
+    <p id="test"></p>
     
     <div class="wrapper">
         
@@ -122,6 +125,26 @@ a{
         <div class="box box3">  {{> box3}} </div><!--box3-->
         <div class="box box4">  {{> box4}} </div><!--box4-->
     </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+        //$('h4').css('color','blue');
+        $('document').ready(() => {
+            $.get('http://localhost:3000/logs/5b33c61fa842c549e04a42e8', (data) => {
+                const title = data.log.title;
+                const link = data.log.url;
+                const date = data.log.entryDate;
+
+                var post = `<div><a href="http://${link}">${title}</a></div>`;
+
+                document.getElementById('test').innerHTML = post;
+            });
+        });
+    </script>
 
 </body>
 </html>
