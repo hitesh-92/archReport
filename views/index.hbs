@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>arch</title>
-    
+
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -22,7 +22,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: strech;
     grid-gap: none;
-    padding: none;    
+    padding: none;
 }
 .wrapper > div{
     padding: 0.2em;
@@ -43,7 +43,7 @@ body{
 .box2{
     grid-column: 1/2;
     border-right: 1px black solid;
-    align-items: stretch;    
+    align-items: stretch;
 }
 .box3{
     grid-column: 2/3;
@@ -62,18 +62,20 @@ p{
     background: rgb(239, 242, 243);
     text-justify: distribute;
     padding: none;
-    margin: none;
+    margin: 1em 0em;
+
+
 }
 .box3 > div:nth-child(even){
     background: rgb(239, 242, 243);
     text-justify: distribute;
     padding: none;
-    margin: none;
+    margin: 1em 0em;
 }
 .box4 > div:nth-child(odd){
     background: rgb(239, 242, 243);
     text-justify: distribute;
-    padding: none;  
+    padding: none;
 }
 .border-top{
     border-top: 1px rgb(179, 179, 179) solid;
@@ -101,6 +103,11 @@ div{
 a{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
+    font-weight: 300;
+
+}
+blockquote{
+  font-family: Geneva, serif;
 }
     </style>
 
@@ -112,15 +119,15 @@ a{
     {{> alert}}
 
     <p id="test"></p>
-    
+
     <div class="wrapper">
-        
-        <div class="box box1"> 
+
+        <div class="box box1">
             <h4>arch report</h4>
             <br>
-            <blockquote>"The diameter of your knowledge is the circumference of your activity."</blockquote>
+            <blockquote>"The diameter of your knowledge is the circumference of your activity"</blockquote>
           </div>
-        
+
         <div class="box box2">  {{> box2}} </div><!--box2-->
         <div class="box box3">  {{> box3}} </div><!--box3-->
         <div class="box box4">  {{> box4}} </div><!--box4-->
