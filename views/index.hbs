@@ -11,104 +11,8 @@
 
     <style>
 
-body{
-    background: rgb(248, 255, 255)
-}
+      body{background:rgb(248, 255, 255)}.wrapper{display:grid;align-items:stretch;grid-auto-rows:minmax(100px, auto);grid-template-columns:1fr 1fr 1fr;justify-items:strech;grid-gap:none;padding:none}.wrapper > div{padding:0.2em}.box{text-justify:distribute;padding:none;margin:none}.box1{grid-column:1/4;padding-bottom:50px;margin-bottom:2.5em;border-bottom:1px black solid;align-content:center;text-align:center}.box2{grid-column:1/2;border-right:1px black solid;align-items:stretch}.box3{grid-column:2/3;border-right:1px black solid;align-items:stretch;padding-right:1em}.box4{grid-column:3/4}p{font-size:0.85em;font-family:sans-serif}.box2 > div:nth-child(odd){background:rgb(239, 242, 243);text-justify:distribute;padding:none;margin:1em 0}.box3 > div:nth-child(even){background:rgb(239, 242, 243);text-justify:distribute;padding:none;margin:1em 0}.box4 > div:nth-child(odd){background:rgb(239, 242, 243);text-justify:distribute;padding:none}.border-top{border-top:1px rgb(179, 179, 179) solid}.border-bottom{border-bottom:1px rgb(179, 179, 179) solid}a{text-decoration:none;color:black}a:hover{text-decoration:none;color:brown}p{font-size:0.8em}h4{font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}div{margin-top:0.5em}a{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align:justify;font-weight:300}blockquote{font-family:Geneva, serif}
 
-.wrapper{
-    display: grid;
-    align-items: stretch;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: strech;
-    grid-gap: none;
-    padding: none;
-}
-.wrapper > div{
-    padding: 0.2em;
-}
-.box{
-    text-justify: distribute;
-    padding: none;
-    margin: none;
-}
-.box1{
-    grid-column: 1/4;
-    padding-bottom: 50px;
-    margin-bottom: 2.5em;
-    border-bottom: 1px black solid;
-    align-content: center;
-    text-align: center;
-}
-.box2{
-    grid-column: 1/2;
-    border-right: 1px black solid;
-    align-items: stretch;
-}
-.box3{
-    grid-column: 2/3;
-    border-right: 1px black solid;
-    align-items: stretch;
-    padding-right: 1em;
-}
-.box4{
-    grid-column: 3/4;
-}
-p{
-    font-size: 0.85em;
-    font-family: sans-serif
-}
-.box2 > div:nth-child(odd){
-    background: rgb(239, 242, 243);
-    text-justify: distribute;
-    padding: none;
-    margin: 1em 0em;
-
-
-}
-.box3 > div:nth-child(even){
-    background: rgb(239, 242, 243);
-    text-justify: distribute;
-    padding: none;
-    margin: 1em 0em;
-}
-.box4 > div:nth-child(odd){
-    background: rgb(239, 242, 243);
-    text-justify: distribute;
-    padding: none;
-}
-.border-top{
-    border-top: 1px rgb(179, 179, 179) solid;
-}
-.border-bottom{
-    border-bottom: 1px rgb(179, 179, 179) solid;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-a:hover{
-    text-decoration: none;
-    color: brown;
-}
-p{
-    font-size: 0.8em;
-}
-h4{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-div{
-    margin-top: 0.5em;
-}
-a{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
-    font-weight: 300;
-
-}
-blockquote{
-  font-family: Geneva, serif;
-}
     </style>
 
 
@@ -125,6 +29,7 @@ blockquote{
         <div class="box box1">
             <h4>arch report</h4>
             <br>
+            {{getYear}}
             <blockquote>"The diameter of your knowledge is the circumference of your activity"</blockquote>
           </div>
 
@@ -138,10 +43,12 @@ blockquote{
         crossorigin="anonymous">
     </script>
 
-    <script>
+    <!-- <script>
+    const briet = '5b4ad051100c95092c0131bc';
+    const drudge = '5b33c61fa842c549e04a42e8';
         //$('h4').css('color','blue');
-        $('document').ready(() => {
-            $.get('http://localhost:3000/logs/5b33c61fa842c549e04a42e8', (data) => {
+        $('document').ready(function() {
+            $.get(`http://localhost:3000/logs/${briet}`, (data) => {
                 const title = data.log.title;
                 const link = data.log.url;
                 const date = data.log.entryDate;
@@ -151,7 +58,7 @@ blockquote{
                 document.getElementById('test').innerHTML = post;
             });
         });
-    </script>
+    </script> -->
 
 </body>
 </html>

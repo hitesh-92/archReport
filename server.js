@@ -3,6 +3,9 @@ const hbs = require('hbs');
 var app = express();
 const port = process.env.PORT || 5000;
 
+hbs.registerHelper('getTime', () => {
+    
+});
 
 hbs.registerPartials(__dirname + '/views/partials');
 // hbs.registerHelper(__dirname, + './../views/assets');
