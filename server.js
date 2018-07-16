@@ -1,11 +1,40 @@
 const express = require('express');
 const hbs = require('hbs');
-var app = express();
+const app = express();
 const port = process.env.PORT || 5000;
 
-hbs.registerHelper('getTime', () => {
-    
+const logData = require('./views/assets/loadArticles');
+const getTime = require('./views/assets/test');
+
+// hbs.registerHelper('getTime', () => {
+//     return new Date().getFullYear();
+// });
+
+hbs.registerHelper('loadArticle', () => {
+
+  const getPost = async (id) => {
+    return await logData(id);
+  };
+
+  // getPost('5b4ad8b75c03b632645d06bc').then((data) => {
+  //   console.log(data);
+  //   return data;
+  // }).catch((err) => {
+  //   console.log(err);
+  // });
+  getPost('5b4ad8b75c03b632645d06bc').then((data) => {
+    console.log('data', data);
+    console.log('finished!----');
+  })
+
 });
+
+hbs.registerHelper('getTime', () => {
+  const timeNow = getTime();
+  // console.log(timeNow);
+  return timeNow;
+})
+
 
 hbs.registerPartials(__dirname + '/views/partials');
 // hbs.registerHelper(__dirname, + './../views/assets');

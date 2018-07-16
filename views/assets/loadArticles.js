@@ -22,29 +22,10 @@ const getArticles = async (ids) => {
   return await axios.get(conn);
 };
 
-columnLogs('5b4ad8b75c03b632645d06bc').then((data) => {
-  const logs = data.data.logs;
-  return getArticles(logs);
-}).then((data) => {
-  const articles = data.data.articles;
+///////////////////////////////////////////////////////////
 
-  // console.log(articles[0]);
-
-  const makeLink = (article) => {
-    let html = '';
-    html += `<div><a href="http://${article.url}">${article.title}</a></div>`;
-    return html;
-  };
-
-  let toDisplay = '';
-
-  for (each of articles) {
-    const link = makeLink(each);
-    toDisplay += link;
-  }
-
-  jQuery('#test').innerHTML = toDisplay;
-
-}).catch((error) => {
-  console.log(error);
-});
+const columnData = async (id) => {
+  const conn = `http://localhost:3000/column/${id}`;
+  const columnLogs = await axios.get(conn);
+  return columnLogs.data;
+};
