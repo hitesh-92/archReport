@@ -7,12 +7,92 @@
 
     <title>arch</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet">
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        crossorigin="anonymous">
+    </script>
 
     <style>
+        body {
+            background: white;
+        }
 
-      body{background:rgb(248, 255, 255)}.wrapper{display:grid;align-items:stretch;grid-auto-rows:minmax(100px, auto);grid-template-columns:1fr 1fr 1fr;justify-items:strech;grid-gap:none;padding:none}.wrapper > div{padding:0.2em}.box{text-justify:distribute;padding:none;margin:none}.box1{grid-column:1/4;padding-bottom:50px;margin-bottom:2.5em;border-bottom:1px black solid;align-content:center;text-align:center}.box2{grid-column:1/2;border-right:1px black solid;align-items:stretch}.box3{grid-column:2/3;border-right:1px black solid;align-items:stretch;padding-right:1em}.box4{grid-column:3/4}p{font-size:0.85em;font-family:sans-serif}.box2 > div:nth-child(odd){background:rgb(239, 242, 243);text-justify:distribute;padding:none;margin:1em 0}.box3 > div:nth-child(even){background:rgb(239, 242, 243);text-justify:distribute;padding:none;margin:1em 0}.box4 > div:nth-child(odd){background:rgb(239, 242, 243);text-justify:distribute;padding:none}.border-top{border-top:1px rgb(179, 179, 179) solid}.border-bottom{border-bottom:1px rgb(179, 179, 179) solid}a{text-decoration:none;color:black}a:hover{text-decoration:none;color:brown}p{font-size:0.8em}h4{font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}div{margin-top:0.5em}a{font-family:Verdana, Geneva, Tahoma, sans-serif;text-align:justify;font-weight:300}blockquote{font-family:Geneva, serif}
+        .wrapper {
+            display: grid;
+            grid-auto-rows: minmax(100px, auto);
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: strech;
+        }
 
+        
+
+        .box1 {
+            grid-column: 1/4;
+            margin-bottom: 2.5em;
+            text-align: center;
+        }
+
+        .box2 {
+            grid-column: 1/2;
+        }
+
+        .box3 {
+            grid-column: 2/3;
+            
+        }
+
+        .box4 {
+            grid-column: 3/4
+        }
+
+        .box2 > div:nth-child(odd) {
+            background: rgb(240, 240, 240);
+        }
+
+        .box3 > div:nth-child(even) {
+            background: rgb(240, 240, 240);
+        }
+
+        
+        .box4 > div:nth-child(odd) {
+            background: rgb(240, 240, 240);
+        }
+
+        .box > div{
+            box-shadow: 0px 0px 15px -1px rgb(190, 195, 199);;
+        }
+
+        a:hover {
+            color: grey;
+            transition: 0.25s ease-in-out;
+            font-size: 1.005em;
+        }
+
+        h4{
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+        }
+
+        .box > div{
+            padding: 0.3em 0.3em;
+        }
+
+        a{
+            font-family: 'Raleway', sans-serif;
+            text-align: justify;
+            font-weight: 300;
+            text-decoration: none;
+            color: black;
+        }
+
+        blockquote {
+            font-family: Geneva, serif;
+        }
     </style>
 
 
@@ -20,48 +100,26 @@
 </head>
 <body>
 
-    {{> alert}}
-    {{getTime}}
-    {{loadArticle}}
-    <!-- {{getPost}} -->
+    {{!-- {{> alert}} --}}
+    {{!-- {{getTime}} --}}
+    {{!-- {{loadArticle}} --}}
+    {{!-- {{getPost}} --}}
+    {{!-- {{getDate}} --}}
+    <p style="text-align: right">{{getDate}}</p>
 
     <p id="test"></p>
 
     <div class="wrapper">
 
         <div class="box box1">
-            <h4>arch report</h4>
-            <br>
-
-            <blockquote>"The diameter of your knowledge is the circumference of your activity"</blockquote>
-          </div>
+            <h4>Gohil Report</h4>
+        </div>
 
         <div class="box box2">  {{> box2}} </div><!--box2-->
         <div class="box box3">  {{> box3}} </div><!--box3-->
         <div class="box box4">  {{> box4}} </div><!--box4-->
+
     </div>
-
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        crossorigin="anonymous">
-    </script>
-
-    <!-- <script>
-    const briet = '5b4ad051100c95092c0131bc';
-    const drudge = '5b33c61fa842c549e04a42e8';
-        //$('h4').css('color','blue');
-        $('document').ready(function() {
-            $.get(`http://localhost:3000/logs/${briet}`, (data) => {
-                const title = data.log.title;
-                const link = data.log.url;
-                const date = data.log.entryDate;
-
-                var post = `<div><a href="http://${link}">${title}</a></div>`;
-
-                document.getElementById('test').innerHTML = post;
-            });
-        });
-    </script> -->
 
 </body>
 </html>

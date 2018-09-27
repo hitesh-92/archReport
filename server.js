@@ -5,10 +5,7 @@ const port = process.env.PORT || 5050;
 
 const logData = require('./views/assets/loadArticles');
 const getTime = require('./views/assets/test');
-
-// hbs.registerHelper('getTime', () => {
-//     return new Date().getFullYear();
-// });
+const getDate = require('./views/assets/getDate');
 
 hbs.registerHelper('loadArticle', () => {
 
@@ -22,6 +19,7 @@ hbs.registerHelper('loadArticle', () => {
   // }).catch((err) => {
   //   console.log(err);
   // });
+
   getPost('5b4ad8b75c03b632645d06bc').then((data) => {
     console.log('data', data);
     console.log('finished!----');
@@ -30,19 +28,20 @@ hbs.registerHelper('loadArticle', () => {
 });
 
 hbs.registerHelper('getTime', () => {
-  const timeNow = getTime();
-  // console.log(timeNow);
-  return timeNow;
-})
+  return getTime();
+});
 
+hbs.registerHelper('getDate', () => {
+  // return getDate();
+  return new hbs.SafeString(`${getDate()}`);
+});
 
 hbs.registerPartials(__dirname + '/views/partials');
-// hbs.registerHelper(__dirname, + './../views/assets');
+
 app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '../public'));
 
-//pages to render
 app.get('/', (req, res) => {
     res.render('index.hbs');
 });
@@ -50,7 +49,6 @@ app.get('/', (req, res) => {
 app.get('/archive', (req, res) => {
     res.render('archive.hbs');
 });
-
 
 app.listen(port, () => {
     console.log(`\nRunning Express Server - port:${port}\n`);
