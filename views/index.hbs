@@ -18,6 +18,7 @@
     </script>
 
     <style>
+
         body {
             background: white;
         }
@@ -28,8 +29,6 @@
             grid-template-columns: 1fr 1fr 1fr;
             justify-items: strech;
         }
-
-        
 
         .box1 {
             grid-column: 1/4;
@@ -57,20 +56,23 @@
         .box3 > div:nth-child(even) {
             background: rgb(240, 240, 240);
         }
-
         
         .box4 > div:nth-child(odd) {
             background: rgb(240, 240, 240);
         }
 
         .box > div{
-            box-shadow: 0px 0px 15px -1px rgb(190, 195, 199);;
+            box-shadow: 0px 0px 15px 0px rgba(190, 195, 199, 0.438);;
         }
 
-        a:hover {
-            color: grey;
+        .box > div:hover {
             transition: 0.25s ease-in-out;
             font-size: 1.005em;
+            background: rgba(128, 128, 128, 0.199);
+        }
+
+        .box > div > a:hover{
+            color: rgb(122, 116, 116);
         }
 
         h4{
@@ -93,6 +95,7 @@
         blockquote {
             font-family: Geneva, serif;
         }
+
     </style>
 
 

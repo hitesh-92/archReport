@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 const port = process.env.PORT || 5050;
+const axios = require('axios');
 
 const logData = require('./views/assets/loadArticles');
 const getTime = require('./views/assets/test');
