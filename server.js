@@ -4,9 +4,11 @@ const app = express();
 const port = process.env.PORT || 5050;
 const axios = require('axios');
 
-const logData = require('./views/assets/loadArticles');
+// const logData = require('./views/assets/loadArticles');
 const getTime = require('./views/assets/test');
+
 const getDate = require('./views/assets/getDate');
+
 
 hbs.registerHelper('loadArticle', () => {
 
@@ -28,13 +30,11 @@ hbs.registerHelper('loadArticle', () => {
 
 });
 
-hbs.registerHelper('getTime', () => {
-  return getTime();
-});
-
 hbs.registerHelper('getDate', () => {
-  // return getDate();
-  return new hbs.SafeString(`${getDate()}`);
+  const date = getDate(); 
+  return date;
+
+  // return new hbs.SafeString(`${getDate()}`);
 });
 
 hbs.registerPartials(__dirname + '/views/partials');
