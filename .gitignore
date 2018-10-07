@@ -1,3 +1,2 @@
 node_modules
-news-db
-package-lock.json
+views/assets/loadArticles.js
