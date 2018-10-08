@@ -2,9 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 const port = process.env.PORT || 5050;
-// const axios = require('axios');
 const path = require('path');
-const fetch = require('node-fetch')
+
 
 hbs.registerPartials(__dirname + '/views/partials');
 
