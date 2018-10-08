@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="News article links arcreport gohilreport">
+    <meta name="description" content="News article links archreport gohilreport">
     <meta name="keywords" content="news,links,archreport,gohilreport">
     <meta name="author" content="Hitesh Gohil">
 
@@ -23,7 +23,7 @@
 
     <style>
 
-        *body {
+        body {
             background: white;
         }
 
@@ -65,7 +65,7 @@
         }
 
         .box > div{
-            box-shadow: 0px 0px 15px 0px rgba(190, 195, 199, 0.438);;
+            box-shadow: 0px 0px 15px 0px rgba(190, 195, 199, 0.438);
         }
 
         .box > div:hover {
@@ -85,6 +85,7 @@
 
         .box > div{
             padding: 0.3em 0.3em;
+            margin: 7.5px 5px;
         }
 
         a{
@@ -103,11 +104,12 @@
 
 </head>
 <body>
-
+<p><i id="btcUSD"></i> </p>
     <div class="wrapper">
 
         <div class="box box1">
             <h4>Gohil Report</h4>
+            
         </div>
 
         <div class="box box2">  {{> box2}} </div><!--box2-->
@@ -115,6 +117,21 @@
         <div class="box box4">  {{> box4}} </div><!--box4-->
 
     </div>
+
+
+    <script>
+
+        async function btcPrice(){
+            let res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+            let data = await res.json();
+            const result = data.bpi.USD.rate.split(".")[0];
+            document.getElementById('btcUSD').innerText = result;
+        }
+
+        btcPrice();
+        
+    </script>
+
 
 </body>
 </html>
