@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,96 +20,18 @@
         crossorigin="anonymous">
     </script>
 
-    <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
-
-    <style>
-
-        body {
-            background: white;
-        }
-
-        .wrapper {
-            display: grid;
-            grid-auto-rows: minmax(100px, auto);
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .box1 {
-            grid-column: 1/4;
-            margin-bottom: 2.5em;
-            text-align: center;
-        }
-
-        .box2 {
-            grid-column: 1/2;
-        }
-
-        .box3 {
-            grid-column: 2/3;
-            
-        }
-
-        .box4 {
-            grid-column: 3/4
-        }
-
-        .box2 > div:nth-child(odd) {
-            background: rgb(240, 240, 240);
-        }
-
-        .box3 > div:nth-child(even) {
-            background: rgb(240, 240, 240);
-        }
-        
-        .box4 > div:nth-child(odd) {
-            background: rgb(240, 240, 240);
-        }
-
-        .box > div{
-            box-shadow: 0px 0px 15px 0px rgba(190, 195, 199, 0.438);
-        }
-
-        .box > div:hover {
-            transition: 0.25s ease-in-out;
-            font-size: 1.005em;
-            background: rgba(128, 128, 128, 0.199);
-        }
-
-        .box > div > a:hover{
-            color: rgb(122, 116, 116);
-        }
-
-        h4{
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2em;
-        }
-
-        .box > div{
-            padding: 0.3em 0.3em;
-            margin: 7.5px 5px;
-        }
-
-        a{
-            font-family: 'Raleway', sans-serif;
-            text-align: justify;
-            font-weight: 300;
-            text-decoration: none;
-            color: black;
-        }
-
-        blockquote {
-            font-family: Geneva, serif;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
 </head>
 <body>
-<small>BTCUSD <i id="btcUSD"></i> </small>
+{{!-- <small>BTC/USD <i id="btcUSD"></i></small> --}}
+<div></div>
+
     <div class="wrapper">
 
         <div class="box box1">
             <h4>Gohil Report</h4>
+            {{> alert}}
             
         </div>
 
@@ -131,7 +54,7 @@
         btcPrice();
 
     </script>
-
+    
 
 </body>
 </html>
