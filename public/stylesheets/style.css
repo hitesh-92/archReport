@@ -31,6 +31,7 @@ body {
     background: rgb(240, 240, 240);
 }
 
+
 .box3 > div:nth-child(even) {
     background: rgb(240, 240, 240);
 }
@@ -39,14 +40,17 @@ body {
     background: rgb(240, 240, 240);
 }
 
+
 .box > div{
-    box-shadow: 0px 0px 15px 0px rgba(190, 195, 199, 0.438);
+    box-shadow: 0px 0px 15px 1px rgba(200, 195, 199, 0.65);
+    border: 1px solid rgb(225, 225, 225);
 }
+
 
 .box > div:hover {
     transition: 0.25s ease-in-out;
-    font-size: 1.005em;
-    background: rgba(128, 128, 128, 0.199);
+    font-size: 1.003em;
+    background: rgba(128, 128, 128, 0.2);
 }
 
 .box > div > a:hover{
@@ -71,6 +75,21 @@ a{
     color: black;
 }
 
-blockquote {
-    font-family: Geneva, serif;
+
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        display: block;
+    }
+
+    .box2{
+        box-shadow: 0px 0px 15px 1px rgba(94, 94, 94);
+    }
+
+    .box3{
+        box-shadow: 0px 0px 15px 1px rgba(94, 94, 94);
+    }
+
+    .box4{
+        box-shadow: 0px 0px 15px 1px rgba(94, 94, 94);
+    }
 }

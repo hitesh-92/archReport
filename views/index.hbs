@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="News article links archreport gohilreport">
-    <meta name="keywords" content="news,links,archreport,gohilreport">
+    <meta name="keywords" content="gohil,report,news,links,archreport,gohilreport">
     <meta name="author" content="Hitesh Gohil">
 
     <title>GohilReport</title>
-
-    <link rel="stylesheet" href="public/assets/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Raleway" rel="stylesheet">
 
@@ -24,15 +22,12 @@
 
 </head>
 <body>
-{{!-- <small>BTC/USD <i id="btcUSD"></i></small> --}}
-<div></div>
+<small>BTC/USD <i id="btcUSD"></i></small>
 
     <div class="wrapper">
 
         <div class="box box1">
             <h4>Gohil Report</h4>
-            {{> alert}}
-            
         </div>
 
         <div class="box box2">  {{> box2}} </div><!--box2-->
@@ -41,20 +36,11 @@
 
     </div>
 
+    <footer>
+        <p></p>
+    </footer>
 
-    <script>
-
-        async function btcPrice(){
-            let res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
-            let data = await res.json();
-            const result = data.bpi.USD.rate.split(".")[0];
-            document.getElementById('btcUSD').innerText = result;
-        }
-
-        btcPrice();
-
-    </script>
-    
+    <script type="text/javascript" src="scripts/main.js"></script>
 
 </body>
 </html>
