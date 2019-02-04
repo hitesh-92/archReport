@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GohilReport | Log In</title>
+</head>
+<body>
+
+    <h1>{{test}}</h1>
+        
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+    </div>
+
+    <button type="" id="submit">LOG IN</button>
+
+    <p id="info"></p>
+
+
+    <script>
+        console.log(new Date().toTimeString())
+        const submit = document.getElementById('submit');
+        const _email = document.getElementById('email');
+        const _password = document.getElementById('password');
+        const info = document.getElementById('info');
+
+        submit.addEventListener('click', function(){
+
+            const data = {}
+            data.email = _email.value
+            data.password = _password.value
+
+            const post = async () => {
+
+                return await fetch('http://localhost:8000/user/login', {
+                    method: 'POST',
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(data),
+                    mode: 'cors'
+                })
+                .then(res => res.json())
+                .then(res => {
+
+                    //if (res.loggedIn) console.log('It w0rk3d!') //start loading screen and hit api for next page's data
+                    if(res.loggedIn) {
+                        console.log(res.header)
+                        window.location.replace('/home')
+                    }
+
+                    else console.log('wrong pas')
+
+                })
+            }
+
+            post();
+
+        })
+
+    </script>
+
+</body>
+</html></html>

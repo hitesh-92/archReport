@@ -10,10 +10,26 @@ app.set('view engine', 'hbs');
 
 app.use(express.static(path.join(__dirname + '/public')));
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index.hbs');
 });
+
+app.get('/login', (req,res) => {
+    res.render('user/login.hbs', {test:'Login'})
+})
+
+app.get('/signup', (req,res) => {
+    res.render('user/signup.hbs')
+})
+
+app.get('/home', (req,res) => {
+    res.render('report/home.hbs')
+})
+
 
 app.listen(port, () => {
     console.log(`\n--Running Express Server - port:${port}\n`);
 });
+
+
+// 
