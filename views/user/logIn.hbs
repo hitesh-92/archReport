@@ -1,5 +1,7 @@
 
-    <h1>{{test}}</h1>
+{{> header }}
+
+    <h1>Log In</h1>
         
     <div>
         <label for="email">Email:</label>
@@ -10,6 +12,9 @@
         <label for="password">Password:</label>
         <input type="password" name="password" id="password">
     </div>
+
+    <p>test@email.com</p>
+    <p>1q2w3e4r5t</p>
 
     <button type="" id="submit">LOG IN</button>
 
@@ -40,13 +45,14 @@
                 .then(res => res.json())
                 .then(res => {
 
-                    //if (res.loggedIn) console.log('It w0rk3d!') //start loading screen and hit api for next page's data
+                    console.log(res)
+
                     if(res.loggedIn) {
                         console.log(res.header)
                         window.location.replace('/home')
                     }
 
-                    else console.log('wrong pas')
+                    else console.log('wrong pass')
 
                 })
             }
@@ -57,5 +63,4 @@
 
     </script>
 
-</body>
-</html></html>
+{{> footer}}

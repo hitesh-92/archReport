@@ -23,6 +23,8 @@ app.get('/signup', (req,res) => {
 })
 
 app.get('/home', (req,res) => {
+    console.log('HIT /home')
+    console.log(req)
     res.render('report/home.hbs')
 })
 
