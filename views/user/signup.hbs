@@ -2,61 +2,53 @@
 {{> header}}
     
     <h4>Sign Up!</h4>
-    <a href="/">Go Home</a><br><br>
-        
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-        </div>
-
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
-        </div>
-
-        <button type="" id="submit">Sing Up</button>
 
 
         <p id="info"></p>
 
+        <br><br>
 
+        <section class="pure-g">
 
-    <script>
-        console.log(new Date().toTimeString())
+            <form class="pure-form pure-form-stacked pure-u-1 pure-u-md-1-2">
 
-        const submit = document.getElementById('submit');
-        const _email = document.getElementById('email');
-        const _password = document.getElementById('password');
-        const info = document.getElementById('info');
+                <fieldset>
+                    <legend>Enter details to sign up</legend>
 
-        submit.addEventListener('click', function(){
+                    <label for="email">Email test@user.com</label>
+                    <input 
+                        id="email" 
+                        type="email" 
+                        placeholder="pickAnyEmail@email.com"
+                        required
+                    >
 
-            const data = {}
-            data.email = _email.value
-            data.password = _password.value
+                    <br>
 
-            const post = async () => {
+                    <label for="password">Password 1q2w3e4r5t</label>
+                    <input 
+                        id="password"
+                        type="password" 
+                        placeholder="b4dp4ssw0rd"
+                        required
+                    >
+                    <span class="pure-form-message">Password must contain atleast 10 chars</span>
 
-                return await fetch('http://localhost:8000/user/signup', {
-                    method: 'POST',
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify(data),
-                    mode: 'cors'
-                })
-                .then(res => res.json())
-                .then(res => {
-                    window.location.replace('/login')
-                })
-            }
+                    <br>
 
-            post();
+                    <button 
+                        type="submit" 
+                        class="pure-button pure-button-primary button-large" 
+                        id="submit"
+                    >
+                        Sign up
+                    </button>
+                </fieldset>
+            </form>
 
-        })
-
-
-        
-
-    </script>
+        </section>
+   
+    <script src="scripts/signin.js"></script>
 
 </body>
 </html>

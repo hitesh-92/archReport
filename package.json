@@ -15,11 +15,9 @@
   "author": "Hitesh",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "bcrpyt": "^2.0.0",
     "express": "^4.16.4",
-    "hbs": "^4.0.1",
-    "morgan": "^1.9.1"
+    "hbs": "^4.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

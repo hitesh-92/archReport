@@ -28,10 +28,11 @@ app.get('/home', (req,res) => {
     res.render('report/home.hbs')
 })
 
+app.use((req, res, next) => {
+    res.redirect('/')
+})
+
 
 app.listen(port, () => {
     console.log(`\n--Running Express Server - port:${port}\n`);
 });
-
-
-// 
