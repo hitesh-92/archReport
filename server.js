@@ -32,7 +32,6 @@ app.use((req, res, next) => {
     res.redirect('/')
 })
 
-
 app.listen(port, () => {
     console.log(`\n--Running Express Server - port:${port}\n`);
 });

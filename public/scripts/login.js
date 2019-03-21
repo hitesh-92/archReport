@@ -26,11 +26,13 @@ submit.addEventListener('click', function(){
             if(res.loggedIn) {
                 console.log(res.header)
                 //window.location.replace('/home')
+                //USER LOCAL STORAGE FOR SAVE JWT
             }
 
             else console.log('wrong pass')
 
         })
     };
+
     post();
 })
