@@ -29,9 +29,15 @@ export default {
         border: 1px solid white;
     }
 
+    article{
+        transition: 1s ease-in-out;
+    }
+
     article a{
         color: red;
-        text-decoration: none
+        /* text-decoration: none; */
+        margin: 0.5rem 0;
     }
+    
 
 </style>
