@@ -35,7 +35,7 @@ export default {
 
 #columns div:hover{
     background-color: rgb(255, 232, 232);
-    text-shadow: 1px 1px 1px rgb(162, 184, 255)
+    text-shadow: 1px 1px 1px rgb(162, 184, 255);
 }
 
 #columns div a{
