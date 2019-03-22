@@ -76,7 +76,7 @@ Chinese spy chips said to be found in hardware used by APPLE, AMAZON...
 China eyes 'black tech' to boost security as parliament meets
 </a></div>
 
-<div><a href="https://www.theguardian.com/world/2019/mar/11/china-database-lists-breedready-status-of-18-million-women">
+<div class="new"><a href="https://www.theguardian.com/world/2019/mar/11/china-database-lists-breedready-status-of-18-million-women">
 China database lists 'breedready' status of 1.8 million women
 </a></div>
 
@@ -100,7 +100,7 @@ Trans genes
 Mini-human brains with their own BLOOD VESSELS are grown
 </a></div>
 
-<div><a href="https://sg.news.yahoo.com/harvard-university-uncovers-dna-switch-180000109.html">
+<div class="new"><a href="https://sg.news.yahoo.com/harvard-university-uncovers-dna-switch-180000109.html">
 Harvard University uncovers DNA switch that controls genes for whole-body regeneration
 </a></div>
 

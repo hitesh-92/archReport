@@ -1,7 +1,7 @@
 <template>
     <section>
 
-<div><a href="https://www.infowars.com/the-final-level-of-censorship-is-here-the-banning-of-urls/">
+<div class="new"><a href="https://www.infowars.com/the-final-level-of-censorship-is-here-the-banning-of-urls/">
 Next Level Of Censorship IS HERE: The Banning on URLS
 </a></div>
 
@@ -17,7 +17,7 @@ Digital footprint starts in the womb
 Generation of child web addicts
 </a></div>
 
-<div><a href="https://www.telegraph.co.uk/news/2019/02/07/children-spend-twice-long-smartphones-talking-parents/">
+<div class="new"><a href="https://www.telegraph.co.uk/news/2019/02/07/children-spend-twice-long-smartphones-talking-parents/">
 Children spend twice as long on smartphones as talking to parents
 </a></div>
 
@@ -53,7 +53,7 @@ GOOGLE consumes one-third of our digital minds...
 Police Order GOOGLE To Hand Over Location Data For All People Near Crime Scenes...
 </a></div>
 
-<div><a href="https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921">
+<div class="new"><a href="https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921">
 Facial recognition's 'dirty little secret': Millions of online photos scraped without consent
 </a></div>
 

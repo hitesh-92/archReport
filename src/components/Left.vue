@@ -1,7 +1,7 @@
 <template>
     <section>
         
-        <div><a href="https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data">
+<div><a href="https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data">
 The world’s most valuable resource is no longer oil, but data
 </a></div>
 
@@ -13,7 +13,7 @@ Boys can have periods too... to be taught in Sex Ed
 Burnout, stress lead more companies to try four-day work week...
 </a></div>
 
-<div><a href="https://www.apnews.com/17f0f799580a483fbd1b2d69bcf2ba18">
+<div class="new"><a href="https://www.apnews.com/17f0f799580a483fbd1b2d69bcf2ba18">
 Gene-edited food quietly arrives in restaurant cooking oil
 </a></div>
 
@@ -74,7 +74,7 @@ Six in 10 millennials in 'quarter-life' crisis...
 </a></div>
 
 <div><a href="https://www.express.co.uk/life-style/cars/928482/diesel-car-scrappage-toyota-diesel-engine-UK">
-Toyota to stop selling diesel cars in all European markets by the end of year
+Toyota to stop selling diesel cars in all European markets by the end of 2018
 </a></div>
 
 <div><a href="https://www.express.co.uk/news/uk/930075/NHS-crisis-UK-health-alcohol-related-problems-cancer-liver-disease-norman-lamb-mp">
@@ -97,7 +97,7 @@ Elderly to be cared for by robots
 Lab-grown meat coming soon
 </a></div>
 
-<div><a href="https://www.telegraph.co.uk/science/2016/03/15/aborted-babies-incinerated-to-heat-uk-hospitals/">
+<div class="new"><a href="https://www.telegraph.co.uk/science/2016/03/15/aborted-babies-incinerated-to-heat-uk-hospitals/">
 Aborted babies incinerated to heat UK hospitals
 </a></div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <PriceIndex />
 
     <Alert />
@@ -27,10 +27,19 @@
   }
 </script>
 
-<style scoped>  
+<style scoped>
+
+main{
+  padding: 2rem 0;
+}
+
+#home{
+  margin-bottom: 5rem
+}
 
 #title{
   padding: 5rem 0;
 }
+
 
 </style>

@@ -41,4 +41,9 @@ export default {
 #columns div a{
     text-decoration: none;
 }
+
+.new{
+    background-color: rgb(242, 255, 241)
+}
+
 </style>
