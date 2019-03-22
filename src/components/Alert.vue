@@ -31,11 +31,11 @@ export default {
 
     article{
         transition: 1s ease-in-out;
+        margin: 0.5rem 0;
     }
 
     article a{
         color: red;
-        /* text-decoration: none; */
         margin: 0.5rem 0;
     }
     
