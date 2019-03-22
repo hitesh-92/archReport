@@ -32,15 +32,15 @@ export default {
         setInterval(() => {
             getRate().then(rate => {
 
-                if(rate == undefined) return
+                if(rate == undefined) {
+                    this.color.color='rgb(114, 130, 139)'
+                    return
+                }
 
                 //old_rate starts off as undefined, 1st call will chage to null then use to switch colors
                 if (this.old_price === undefined) this.old_price = null
-                else {
-                    if (rate === this.curr_price) this.color.color = 'rgb(177, 177, 177)'
-                    else rate > this.old_price ? this.color.color='rgb(53, 110, 0)' : this.color.color='rgb(114, 11, 11)'
-                }
-                console.log(Date.now())
+                else if (rate != this.curr_price) rate > this.old_price ? this.color.color='rgb(38, 165, 0)' : this.color.color='rgb(216, 23, 23)'
+                
                 this.old_price = this.curr_price
                 this.curr_price = rate
             })
@@ -55,5 +55,5 @@ export default {
         font-size: 0.9rem;
     }
 
-    .red{color: rgb(114, 11, 11)}
+    .red{color: rgb(216, 23, 23)}
 </style>
