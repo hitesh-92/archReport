@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import LeftColumn from './Left'
-import RightColumn from './Right'
-import CenterColumn from './Center'
+import LeftColumn from './columns/Left'
+import RightColumn from './columns/Right'
+import CenterColumn from './columns/Center'
 
 export default {
     components:{
@@ -24,6 +24,7 @@ export default {
 #columns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 0;
 }
 
 #columns div{
