@@ -9,6 +9,10 @@ Next Level Of Censorship IS HERE: The Banning on URLS
 GOOGLE News may shut over EU 'link tax' plans
 </a></div>
 
+<div><a href="https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data">
+The world’s most valuable resource is no longer oil, but data
+</a></div>
+
 <div><a href="https://www.telegraph.co.uk/technology/2018/11/08/emb-thurs-children-have-1000-pictures-posted-online-turn-13/">
 Digital footprint starts in the womb
 </a></div>
@@ -23,6 +27,10 @@ Children spend twice as long on smartphones as talking to parents
 
 <div><a href="https://www.telegraph.co.uk/technology/2018/11/05/sir-tim-berners-lee-launches-magna-carta-web-save-internet-abuse/">
 Sir Tim Berners-Lee launches 'Magna Carta for the web' to save internet
+</a></div>
+
+<div class="new"><a href="https://theweek.com/articles/832948/algorithms-have-gotten-control-time-regulate">
+Algorithms need regulating
 </a></div>
 
 <div><a href="https://www.nytimes.com/2018/08/13/business/behavioral-biometrics-banks-security.html">
@@ -57,10 +65,6 @@ Police Order GOOGLE To Hand Over Location Data For All People Near Crime Scenes.
 Facial recognition's 'dirty little secret': Millions of online photos scraped without consent
 </a></div>
 
-<div><a href="http://uk.businessinsider.com/emails-show-rbs-bankers-joked-about-crashing-us-housing-market-before-2008-2018-8?op=1&r=US&IR=T">
-RBS bankers joked about destroying the US housing market
-</a></div>
-
 <div><a href="https://www.reuters.com/article/us-china-apple-icloud-insight/apple-moves-to-store-icloud-keys-in-china-raising-human-rights-fears-idUSKCN1G8060">
 Apple moves to store iCloud keys in China, raising human rights fears
 </a></div>
@@ -81,8 +85,16 @@ People Who Enjoy Cleaning The House Are Happier, More Relaxed, Survey Finds
 Ultra-clean homes trigger cancer?
 </a></div>
 
+<div class="new"><a href="https://www.zerohedge.com/news/2019-03-29/hyperinflation-becoming-common-21st-century">
+Hyperinflation Is Becoming Common In The 21st Century
+</a></div>
+
 <div><a href="https://www.theguardian.com/global/shortcuts/2017/oct/29/how-the-actual-magic-money-tree-works">
 85% of MPs unaware how new money is created
+</a></div>
+
+<div><a href="http://uk.businessinsider.com/emails-show-rbs-bankers-joked-about-crashing-us-housing-market-before-2008-2018-8?op=1&r=US&IR=T">
+RBS bankers joked about destroying the US housing market
 </a></div>
 
 <div><a href="https://www.theguardian.com/world/2018/apr/03/being-cash-free-puts-us-at-risk-of-attack-swedes-turn-against-cashlessness">

@@ -43,8 +43,13 @@ export default {
     text-decoration: none;
 }
 
+/* MAIN NEW COLOR */
 .new{
     background-color: rgb(242, 255, 241)
+}
+
+.older {
+    background-color: rgb(255, 243, 221)
 }
 
 </style>

@@ -1,8 +1,8 @@
 <template>
     <section>
         
-<div><a href="https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data">
-The world’s most valuable resource is no longer oil, but data
+<div class="new"><a href="https://www.dailymail.co.uk/femail/article-5499553/Parents-praise-drag-queen-story-time-Morning.html">
+'drag queen story time': teach children about gender identity
 </a></div>
 
 <div><a href="https://www.telegraph.co.uk/news/2018/12/16/boys-can-have-periods-schoolchildren-taught-latest-victory-transgender/">

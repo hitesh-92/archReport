@@ -1,14 +1,15 @@
 <template>
     <section>
+
         <article>
-            <a href="https://www.infowars.com/the-final-level-of-censorship-is-here-the-banning-of-urls/">
-                Next Level Of Censorship IS HERE: The Banning on URLS
+            <a href="https://www.cnet.com/news/uk-to-keep-social-networks-in-check-with-internet-safety-regulator/">
+                UK TO HAVE 'TOUGHEST INTERNET LAWS IN WORLD'
             </a>
         </article>
 
         <article>
-            <a href="https://www.zerohedge.com/news/2019-03-19/after-blocking-zerohedge-and-others-nz-telcos-demand-big-tech-censorship-surge">
-                Telecoms start blocking websites
+            <a href="https://www.infowars.com/the-final-level-of-censorship-is-here-the-banning-of-urls/">
+                Next Level Of Censorship IS HERE: The Banning on URLS
             </a>
         </article>
 
