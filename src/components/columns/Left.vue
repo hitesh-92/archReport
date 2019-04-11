@@ -37,10 +37,6 @@ University Students can now skip exam topics they find ‘upsetting’ without r
 UK: £8bn in migrant remittances with ~7% average global charge
 </a></div>
 
-<div><a href="https://www.thetimes.co.uk/article/we-allow-the-rich-to-escape-charges-admits-taxman-pb307srkq">
-UK: We allow the rich to escape charges, admits taxman
-</a></div>
-
 <div><a href="https://www.dailymail.co.uk/sciencetech/article-6190217/Britain-preparing-set-internet-regulator-Buzzfeed.html">
 UK Gov plans to create internet regulator to fine tech firms that fail to take down illegal material and hate speech within HOURS
 </a></div>
@@ -61,20 +57,16 @@ Army on standby for no-deal Brexit emergency
 London’s Police Fails to Record 100,000 Crimes, Including Sex Offences
 </a></div>
 
-<div><a href="http://www.bbc.co.uk/news/health-42732442">
-'Adolescence now lasts from 10 to 24'
-</a></div>
-
 <div><a href="https://www.westmonster.com/nearly-1200-cases-of-forced-marriage-in-the-uk-last-year/">
 Nearly 1,200 cases of forced marriage in the UK last year
 </a></div>
 
-<div><a href="https://www.independent.co.uk/life-style/millennials-quarter-live-crisis-half-25-35-finance-career-property-first-direct-a8253036.html">
-Six in 10 millennials in 'quarter-life' crisis...
+<div><a href="http://www.bbc.co.uk/news/health-42732442">
+'Adolescence now lasts from 10 to 24'
 </a></div>
 
-<div><a href="https://www.express.co.uk/life-style/cars/928482/diesel-car-scrappage-toyota-diesel-engine-UK">
-Toyota to stop selling diesel cars in all European markets by the end of 2018
+<div><a href="https://www.independent.co.uk/life-style/millennials-quarter-live-crisis-half-25-35-finance-career-property-first-direct-a8253036.html">
+Six in 10 millennials in 'quarter-life' crisis...
 </a></div>
 
 <div><a href="https://www.express.co.uk/news/uk/930075/NHS-crisis-UK-health-alcohol-related-problems-cancer-liver-disease-norman-lamb-mp">
