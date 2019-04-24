@@ -38,7 +38,12 @@ export default {
     article a{
         color: red;
         margin: 0.5rem 0;
+        transition: 0.25s ease-in-out;
+    }
+
+    article a:hover{
+        text-decoration: none;
+        text-shadow: 0.2px 0.2px rgb(187, 85, 85);
     }
     
-
 </style>

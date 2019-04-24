@@ -19,12 +19,18 @@
   import Links from '../components/Links'
 
   export default {
+    data(){
+      return {
+        articleData: null
+      }
+    },
     components: {
       PriceIndex,
       Alert,
       Links
     }
   }
+  
 </script>
 
 <style scoped>
